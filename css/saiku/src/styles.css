@@ -1092,6 +1092,16 @@ a.disabled_toolbar:hover {
 .workspace_toolbar .drillthrough {
     background-position: -781px 7px;
 }
+.workspace_toolbar .toggle_row_totals {
+    background-image: url('../../../images/src/sum_row.png');
+    background-repeat:no-repeat;
+    background-position: 7px 7px;
+}
+.workspace_toolbar .toggle_col_totals {
+    background-image: url('../../../images/src/sum_col.png');
+    background-repeat:no-repeat;
+    background-position: 7px 7px;
+}
 .workspace_toolbar .drillthrough_export {
     background-image: url('../../../images/src/export_drillthrough.png');
     background-position: 7px 7px;

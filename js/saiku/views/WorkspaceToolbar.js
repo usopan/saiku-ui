@@ -43,7 +43,37 @@ var WorkspaceToolbar = Backbone.View.extend({
         // Activate buttons when a new query is created or run
         this.workspace.bind('query:new', this.activate_buttons);
         this.workspace.bind('query:result', this.activate_buttons);
-        
+    },
+    toggle_row_totals: function(){
+	var elem = $(this.el).find('.toggle_row_totals');
+	    if(elem.hasClass('on') ){
+		elem.removeClass('on');
+	    }else{
+		elem.addClass('on'); 
+    }
+
+    if (elem.hasClass('on')) {
+	    this.workspace.query.set({rowtotals: true})
+    } else {
+	    this.workspace.query.set({rowtotals: false})
+    }
+	this.workspace.query.run();
+    },
+    
+    toggle_col_totals: function(){
+	var elem = $(this.el).find('.toggle_col_totals');
+	if(elem.hasClass('on') ){
+	    elem.removeClass('on');
+	}else{
+	    elem.addClass('on'); 
+    }
+
+    if (elem.hasClass('on')) {
+	this.workspace.query.set({coltotals: true})
+    } else {
+	this.workspace.query.set({coltotals: false})
+    }
+	this.workspace.query.run();
     },
     
     activate_buttons: function(args) {

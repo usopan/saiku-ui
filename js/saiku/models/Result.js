@@ -53,7 +53,6 @@ var Result = Backbone.Model.extend({
     },
     
     url: function() {
-        //return encodeURI(this.query.url() + "/result/" + this.query.getProperty('formatter'));
-        return "api/query/execute";
+        return encodeURI(this.query.url() + "/result/" + this.query.get('formatter') + "_" + this.query.get('coltotals') + "_" + this.query.get('rowtotals'));
     }
 });
